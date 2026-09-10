@@ -48,6 +48,13 @@
             <scope>runtime</scope>
         </dependency>
 
+        <!-- PostgreSQL JDBC Driver for Cloud (Render) Deployments -->
+        <dependency>
+            <groupId>org.postgresql</groupId>
+            <artifactId>postgresql</artifactId>
+            <scope>runtime</scope>
+        </dependency>
+
         <!-- Flyway Migration Support for MSSQL -->
         <dependency>
             <groupId>org.flywaydb</groupId>

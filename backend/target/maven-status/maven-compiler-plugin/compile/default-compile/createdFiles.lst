@@ -30,6 +30,7 @@ com\agrirent\app\entity\EscrowTransaction.class
 com\agrirent\app\dto\response\DashboardMetricsResponse.class
 com\agrirent\app\service\AuthService.class
 com\agrirent\app\dto\response\EscrowTransactionResponse.class
+com\agrirent\app\config\PostgresDatabaseConfig.class
 com\agrirent\app\entity\EquipmentTelemetry.class
 com\agrirent\app\dto\response\AuthResponse.class
 com\agrirent\app\dto\request\BookingCreateRequest.class
