@@ -1,0 +1,8 @@
+.git
+.gitignore
+.idea
+*.log
+backend/target
+frontend/node_modules
+frontend/dist
+scratch

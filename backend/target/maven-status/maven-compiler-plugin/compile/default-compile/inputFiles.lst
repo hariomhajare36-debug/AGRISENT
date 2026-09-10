@@ -1,6 +1,7 @@
 C:\Users\LOQ\OneDrive\ドキュメント\Desktop\AGRIRENT\backend\src\main\java\com\agrirent\app\AgrirentApplication.java
 C:\Users\LOQ\OneDrive\ドキュメント\Desktop\AGRIRENT\backend\src\main\java\com\agrirent\app\config\CorsConfig.java
 C:\Users\LOQ\OneDrive\ドキュメント\Desktop\AGRIRENT\backend\src\main\java\com\agrirent\app\config\SecurityConfig.java
+C:\Users\LOQ\OneDrive\ドキュメント\Desktop\AGRIRENT\backend\src\main\java\com\agrirent\app\config\SpaWebConfig.java
 C:\Users\LOQ\OneDrive\ドキュメント\Desktop\AGRIRENT\backend\src\main\java\com\agrirent\app\controller\AdminController.java
 C:\Users\LOQ\OneDrive\ドキュメント\Desktop\AGRIRENT\backend\src\main\java\com\agrirent\app\controller\AuthController.java
 C:\Users\LOQ\OneDrive\ドキュメント\Desktop\AGRIRENT\backend\src\main\java\com\agrirent\app\controller\BookingController.java
@@ -8,6 +9,7 @@ C:\Users\LOQ\OneDrive\ドキュメント\Desktop\AGRIRENT\backend\src\main\java\
 C:\Users\LOQ\OneDrive\ドキュメント\Desktop\AGRIRENT\backend\src\main\java\com\agrirent\app\controller\FarmerController.java
 C:\Users\LOQ\OneDrive\ドキュメント\Desktop\AGRIRENT\backend\src\main\java\com\agrirent\app\controller\OwnerController.java
 C:\Users\LOQ\OneDrive\ドキュメント\Desktop\AGRIRENT\backend\src\main\java\com\agrirent\app\controller\ReviewController.java
+C:\Users\LOQ\OneDrive\ドキュメント\Desktop\AGRIRENT\backend\src\main\java\com\agrirent\app\controller\SpaForwardController.java
 C:\Users\LOQ\OneDrive\ドキュメント\Desktop\AGRIRENT\backend\src\main\java\com\agrirent\app\dto\request\BookingCreateRequest.java
 C:\Users\LOQ\OneDrive\ドキュメント\Desktop\AGRIRENT\backend\src\main\java\com\agrirent\app\dto\request\BookingStatusUpdateRequest.java
 C:\Users\LOQ\OneDrive\ドキュメント\Desktop\AGRIRENT\backend\src\main\java\com\agrirent\app\dto\request\EquipmentCreateRequest.java

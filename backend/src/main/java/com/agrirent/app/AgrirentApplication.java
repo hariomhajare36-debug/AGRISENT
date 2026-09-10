@@ -8,4 +8,4 @@ public class AgrirentApplication {
     public static void main(String[] args) {
         SpringApplication.run(AgrirentApplication.class, args);
     }
-git}
+}

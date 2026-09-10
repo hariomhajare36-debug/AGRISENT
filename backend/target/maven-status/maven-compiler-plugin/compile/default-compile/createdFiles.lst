@@ -1,3 +1,4 @@
+com\agrirent\app\controller\SpaForwardController.class
 com\agrirent\app\dto\response\BookingResponse.class
 com\agrirent\app\dto\request\RegisterRequest.class
 com\agrirent\app\controller\FarmerController.class
@@ -34,6 +35,7 @@ com\agrirent\app\dto\response\AuthResponse.class
 com\agrirent\app\dto\request\BookingCreateRequest.class
 com\agrirent\app\exception\ErrorResponse.class
 com\agrirent\app\mapper\BookingMapper.class
+com\agrirent\app\config\SpaWebConfig.class
 com\agrirent\app\repository\EquipmentTelemetryRepository.class
 com\agrirent\app\exception\ResourceNotFoundException.class
 com\agrirent\app\controller\BookingController.class
