@@ -16,27 +16,27 @@ export const AddEquipmentPage = () => {
     year: 2023,
     category: 'TRACTORS',
     serialVin: '',
-    horsepower: 350,
-    engineHours: 420,
-    driveType: '4WD',
+    horsepower: 55,
+    engineHours: 120,
+    driveType: '2WD',
     fuelType: 'DIESEL',
-    transmission: 'e23 PowerShift',
-    hydraulicFlowGpm: 85.0,
-    ptoSpeed: '1000 RPM (1-3/4 in)',
-    hitchCategory: 'Category 4N/3',
+    transmission: '8 Forward + 2 Reverse',
+    hydraulicFlowGpm: 45.0,
+    ptoSpeed: '540 RPM',
+    hitchCategory: 'Category II',
     description: '',
     images: 'https://images.unsplash.com/photo-1592982537447-7440770cbfc9?auto=format&fit=crop&w=1200&q=80',
-    dailyRate: 1450,
-    weeklyRate: 8200,
-    monthlyRate: 29500,
-    securityDeposit: 5000,
-    purchasePrice: 410000,
+    dailyRate: 3500,
+    weeklyRate: 21000,
+    monthlyRate: 75000,
+    securityDeposit: 15000,
+    purchasePrice: 850000,
     isForRent: true,
     isForSale: false,
-    city: 'Cedar Rapids',
-    state: 'IA',
-    zipCode: '52404',
-    locationAddress: '4580 Prairie View Rd',
+    city: 'Pune',
+    state: 'Maharashtra',
+    zipCode: '411001',
+    locationAddress: 'Pune Agricultural Market, Haveli',
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -374,7 +374,7 @@ export const AddEquipmentPage = () => {
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
               <div>
                 <label className="block text-xs font-bold text-on-surface uppercase tracking-wider mb-1">
-                  Daily Rental Rate ($) *
+                  Daily Rental Rate (₹/day) *
                 </label>
                 <input
                   type="number"
@@ -389,7 +389,7 @@ export const AddEquipmentPage = () => {
 
               <div>
                 <label className="block text-xs font-bold text-on-surface uppercase tracking-wider mb-1">
-                  Weekly Rate ($)
+                  Weekly Rate (₹)
                 </label>
                 <input
                   type="number"
@@ -402,7 +402,7 @@ export const AddEquipmentPage = () => {
 
               <div>
                 <label className="block text-xs font-bold text-on-surface uppercase tracking-wider mb-1">
-                  Security Deposit ($)
+                  Security Deposit (₹)
                 </label>
                 <input
                   type="number"
@@ -416,7 +416,7 @@ export const AddEquipmentPage = () => {
               {formData.isForSale && (
                 <div className="sm:col-span-3">
                   <label className="block text-xs font-bold text-on-surface uppercase tracking-wider mb-1">
-                    Outright Purchase Asking Price ($)
+                    Outright Purchase Asking Price (₹)
                   </label>
                   <input
                     type="number"
@@ -447,7 +447,7 @@ export const AddEquipmentPage = () => {
                   name="locationAddress"
                   value={formData.locationAddress}
                   onChange={handleChange}
-                  placeholder="e.g. 4580 Prairie View Rd"
+                  placeholder="e.g. Gat No. 42, Baramati"
                   className="w-full h-11 px-3.5 rounded-xl bg-surface-container-low border border-outline-variant/40 text-xs font-semibold outline-none focus:ring-2 focus:ring-primary/40"
                 />
               </div>
@@ -531,9 +531,9 @@ export const AddEquipmentPage = () => {
             <EquipmentCard
               equipment={{
                 id: 'preview',
-                title: formData.title || '2023 John Deere 8R 410 Row-Crop',
-                city: formData.city || 'Des Moines',
-                state: formData.state || 'IA',
+                title: formData.title || '2023 Mahindra 575 DI Sarpanch',
+                city: formData.city || 'Pune',
+                state: formData.state || 'Maharashtra',
                 category: formData.category,
                 horsepower: formData.horsepower,
                 engineHours: formData.engineHours,
@@ -552,7 +552,7 @@ export const AddEquipmentPage = () => {
                 <span>AgriRent Guarantee</span>
               </div>
               <p className="text-[11px] leading-relaxed">
-                All newly published machinery is immediately protected with our $1,000,000 comprehensive equipment damage policy and automated escrow payment clearing.
+                All newly published machinery is immediately protected with our ₹50 Lakh comprehensive equipment damage policy and automated escrow payment clearing.
               </p>
             </div>
           </div>

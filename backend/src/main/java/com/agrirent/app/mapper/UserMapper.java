@@ -20,6 +20,12 @@ public class UserMapper {
         response.setCity(user.getCity());
         response.setState(user.getState());
         response.setIsVerified(user.getIsVerified());
+        response.setFirstName(user.getFirstName());
+        response.setLastName(user.getLastName());
+        response.setDistrict(user.getDistrict());
+        response.setAddress(user.getAddress());
+        response.setPincode(user.getPincode());
+        response.setAvatarUrl(user.getAvatarUrl());
         return response;
     }
 }

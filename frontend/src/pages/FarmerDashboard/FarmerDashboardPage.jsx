@@ -5,6 +5,7 @@ import { reviewService } from '../../services/reviewService';
 import StatusBadge from '../../components/common/StatusBadge';
 import Modal from '../../components/common/Modal';
 import { useAuth } from '../../hooks/useAuth';
+import { formatINR } from '../../utils/currency';
 
 export const FarmerDashboardPage = () => {
   const { user } = useAuth();
@@ -159,7 +160,7 @@ export const FarmerDashboardPage = () => {
             </span>
           </div>
           <div className="font-metric-val text-3xl font-bold text-primary">
-            ${(stats.totalSpent || 14200).toLocaleString()}
+            {formatINR(stats.totalSpent || 142000)}
           </div>
           <span className="text-xs text-secondary font-semibold mt-1 block">Escrow Protected</span>
         </div>
@@ -202,18 +203,18 @@ export const FarmerDashboardPage = () => {
                   <div>
                     <StatusBadge status="ACTIVE" customLabel="Active in Field" />
                     <h4 className="font-headline-sm text-lg font-bold text-on-surface mt-2">
-                      {r.equipmentTitle || '2023 John Deere 8R 410'}
+                      {r.equipmentTitle || 'Mahindra 575 DI Sarpanch'}
                     </h4>
                     <p className="text-xs text-on-surface-variant">
                       Return Date:{' '}
                       <strong className="text-on-surface">
                         {new Date(r.endDate).toLocaleDateString()}
                       </strong>{' '}
-                      • Owner: {r.ownerName || 'Cedar Valley Farms'}
+                      • Owner: {r.ownerName || 'Patil Farm Machinery, Baramati'}
                     </p>
                   </div>
                   <span className="text-xs font-bold text-primary px-3 py-1 bg-primary/10 rounded-lg">
-                    ${Number(r.dailyRate || 1450).toLocaleString()} / day
+                    {formatINR(r.dailyRate || 2500)} / day
                   </span>
                 </div>
 
@@ -303,7 +304,7 @@ export const FarmerDashboardPage = () => {
                     {new Date(b.startDate).toLocaleDateString()} to {new Date(b.endDate).toLocaleDateString()} ({b.totalDays}d)
                   </td>
                   <td className="py-3.5 pr-4 font-bold text-primary">
-                    ${Number(b.totalAmount || 0).toLocaleString()}
+                    {formatINR(b.totalAmount || 0)}
                   </td>
                   <td className="py-3.5 pr-4">
                     <StatusBadge status={b.status} />

@@ -2,13 +2,14 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { adminService } from '../../services/adminService';
 import StatusBadge from '../../components/common/StatusBadge';
+import { formatINR } from '../../utils/currency';
 
 export const AdminConsolePage = () => {
   const [metrics, setMetrics] = useState({
-    totalGmv: 3840000,
-    activeListingsCount: 1842,
-    escrowBalance: 620500,
-    disputesCount: 2,
+    totalGmv: 42500000,
+    activeListingsCount: 129,
+    escrowBalance: 6500000,
+    disputesCount: 0,
   });
   const [pendingEquipment, setPendingEquipment] = useState([]);
   const [escrowList, setEscrowList] = useState([]);
@@ -127,7 +128,7 @@ export const AdminConsolePage = () => {
             </span>
           </div>
           <div className="font-metric-val text-3xl font-bold text-primary">
-            ${Number(metrics.totalGmv || 3840000).toLocaleString()}
+            {formatINR(metrics.totalGmv || 42500000)}
           </div>
           <span className="text-xs text-secondary font-semibold mt-1 block">+22% YoY Growth</span>
         </div>
@@ -140,9 +141,9 @@ export const AdminConsolePage = () => {
             </span>
           </div>
           <div className="font-metric-val text-3xl font-bold text-on-surface">
-            {metrics.activeListingsCount || 1842}
+            {metrics.activeListingsCount || 129}
           </div>
-          <span className="text-xs text-on-surface-variant mt-1 block">Across 48 States</span>
+          <span className="text-xs text-on-surface-variant mt-1 block">Across 12 Maharashtra Districts</span>
         </div>
 
         <div className="bg-surface-container-lowest p-5 rounded-2xl border border-outline-variant/40 shadow-sm">
@@ -153,7 +154,7 @@ export const AdminConsolePage = () => {
             </span>
           </div>
           <div className="font-metric-val text-3xl font-bold text-on-surface">
-            ${Number(metrics.escrowBalance || 620500).toLocaleString()}
+            {formatINR(metrics.escrowBalance || 6500000)}
           </div>
           <span className="text-xs text-amber-600 font-semibold mt-1 block">Insured Vault Deposit</span>
         </div>
@@ -218,7 +219,7 @@ export const AdminConsolePage = () => {
                       {eq.serialVin || 'VIN-CHECK-OK'}
                     </td>
                     <td className="py-3.5 pr-4 font-bold text-primary">
-                      ${Number(eq.dailyRate).toLocaleString()} / day
+                      {formatINR(eq.dailyRate)} / day
                     </td>
                     <td className="py-3.5 pr-4">
                       <span className="inline-flex items-center gap-1 text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-full text-[10px] font-semibold">
@@ -283,7 +284,7 @@ export const AdminConsolePage = () => {
                   <td className="py-3.5 pr-4 text-on-surface-variant">Booking #{tx.bookingId}</td>
                   <td className="py-3.5 pr-4 text-on-surface-variant font-medium">{tx.payerName || 'David Miller'}</td>
                   <td className="py-3.5 pr-4 text-on-surface-variant font-medium">{tx.payeeName || 'Marcus Vance'}</td>
-                  <td className="py-3.5 pr-4 font-bold text-primary">${Number(tx.amount).toLocaleString()}</td>
+                  <td className="py-3.5 pr-4 font-bold text-primary">{formatINR(tx.amount)}</td>
                   <td className="py-3.5 pr-4">
                     <StatusBadge status={tx.escrowStatus} />
                   </td>

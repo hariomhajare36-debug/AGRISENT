@@ -8,10 +8,23 @@ public class EquipmentResponse {
     private UserResponse owner;
     private String title;
     private String make;
+    private String brand;
     private String model;
+    private String variant;
     private Integer year;
     private String category;
     private String serialVin;
+    private String currency;
+    private String priceType;
+    private String priceSourceName;
+    private String priceSourceUrl;
+    private String lastVerifiedDate;
+    private String district;
+    private Integer liftingCapacityKg;
+    private Integer fuelTankLitres;
+    private Integer engineCc;
+    private String ptoRpm;
+    private BigDecimal rating;
     private Integer horsepower;
     private Integer engineHours;
     private String driveType;
@@ -151,4 +164,43 @@ public class EquipmentResponse {
 
     public LocalDateTime getCreatedAt() { return createdAt; }
     public void setCreatedAt(LocalDateTime createdAt) { this.createdAt = createdAt; }
+
+    public String getBrand() { return brand; }
+    public void setBrand(String brand) { this.brand = brand; }
+
+    public String getVariant() { return variant; }
+    public void setVariant(String variant) { this.variant = variant; }
+
+    public String getCurrency() { return currency; }
+    public void setCurrency(String currency) { this.currency = currency; }
+
+    public String getPriceType() { return priceType; }
+    public void setPriceType(String priceType) { this.priceType = priceType; }
+
+    public String getPriceSourceName() { return priceSourceName; }
+    public void setPriceSourceName(String priceSourceName) { this.priceSourceName = priceSourceName; }
+
+    public String getPriceSourceUrl() { return priceSourceUrl; }
+    public void setPriceSourceUrl(String priceSourceUrl) { this.priceSourceUrl = priceSourceUrl; }
+
+    public String getLastVerifiedDate() { return lastVerifiedDate; }
+    public void setLastVerifiedDate(String lastVerifiedDate) { this.lastVerifiedDate = lastVerifiedDate; }
+
+    public String getDistrict() { return district; }
+    public void setDistrict(String district) { this.district = district; }
+
+    public Integer getLiftingCapacityKg() { return liftingCapacityKg; }
+    public void setLiftingCapacityKg(Integer liftingCapacityKg) { this.liftingCapacityKg = liftingCapacityKg; }
+
+    public Integer getFuelTankLitres() { return fuelTankLitres; }
+    public void setFuelTankLitres(Integer fuelTankLitres) { this.fuelTankLitres = fuelTankLitres; }
+
+    public Integer getEngineCc() { return engineCc; }
+    public void setEngineCc(Integer engineCc) { this.engineCc = engineCc; }
+
+    public String getPtoRpm() { return ptoRpm; }
+    public void setPtoRpm(String ptoRpm) { this.ptoRpm = ptoRpm; }
+
+    public BigDecimal getRating() { return rating; }
+    public void setRating(BigDecimal rating) { this.rating = rating; }
 }

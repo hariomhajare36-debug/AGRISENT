@@ -38,6 +38,12 @@ export const AuthProvider = ({ children }) => {
     return data;
   };
 
+  const updateProfile = async (profileData) => {
+    const updatedUser = await authService.updateProfile(profileData);
+    setUser(updatedUser);
+    return updatedUser;
+  };
+
   const logout = () => {
     authService.logout();
     setUser(null);
@@ -52,9 +58,11 @@ export const AuthProvider = ({ children }) => {
         isAuthenticated: !!user,
         isFarmer: user?.role === 'ROLE_FARMER',
         isOwner: user?.role === 'ROLE_OWNER',
+        isDealer: user?.role === 'ROLE_DEALER',
         isAdmin: user?.role === 'ROLE_ADMIN',
         login,
         register,
+        updateProfile,
         logout,
         setUser
       }}

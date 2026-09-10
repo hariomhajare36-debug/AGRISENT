@@ -30,6 +30,19 @@ export const authService = {
     return response.data;
   },
 
+  updateProfile: async (profileData) => {
+    const response = await apiClient.put(ENDPOINTS.AUTH.PROFILE, profileData);
+    if (response.data) {
+      localStorage.setItem('agrirent_user', JSON.stringify(response.data));
+    }
+    return response.data;
+  },
+
+  forgotPassword: async (emailOrPhone) => {
+    const response = await apiClient.post(ENDPOINTS.AUTH.FORGOT_PASSWORD, { emailOrPhone });
+    return response.data;
+  },
+
   logout: () => {
     localStorage.removeItem('agrirent_token');
     localStorage.removeItem('agrirent_user');

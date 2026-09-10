@@ -28,10 +28,14 @@ public class EquipmentController {
             @RequestParam(required = false) Integer minHorsepower,
             @RequestParam(required = false) Integer maxHorsepower,
             @RequestParam(required = false) BigDecimal maxDailyRate,
-            @RequestParam(required = false) String driveType
+            @RequestParam(required = false) String driveType,
+            @RequestParam(required = false) String brand,
+            @RequestParam(required = false) String district,
+            @RequestParam(required = false) BigDecimal maxPurchasePrice
     ) {
         return ResponseEntity.ok(equipmentService.getAll(
-                search, category, isForRent, isForSale, minHorsepower, maxHorsepower, maxDailyRate, driveType
+                search, category, isForRent, isForSale, minHorsepower, maxHorsepower, maxDailyRate, driveType,
+                brand, district, maxPurchasePrice
         ));
     }
 

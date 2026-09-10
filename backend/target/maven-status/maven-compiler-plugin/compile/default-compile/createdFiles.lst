@@ -47,6 +47,7 @@ com\agrirent\app\repository\BookingRepository.class
 com\agrirent\app\service\impl\AdminServiceImpl.class
 com\agrirent\app\service\impl\AuthServiceImpl.class
 com\agrirent\app\security\CustomUserDetailsService.class
+com\agrirent\app\dto\request\UpdateProfileRequest.class
 com\agrirent\app\service\ReviewService.class
 com\agrirent\app\exception\BadRequestException.class
 com\agrirent\app\service\BookingService.class
@@ -56,3 +57,4 @@ com\agrirent\app\mapper\EquipmentMapper.class
 com\agrirent\app\exception\GlobalExceptionHandler.class
 com\agrirent\app\service\EquipmentService.class
 com\agrirent\app\service\AdminService.class
+com\agrirent\app\dto\request\ForgotPasswordRequest.class

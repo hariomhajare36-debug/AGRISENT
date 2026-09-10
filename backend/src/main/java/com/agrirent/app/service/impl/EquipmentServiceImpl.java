@@ -64,7 +64,10 @@ public class EquipmentServiceImpl implements EquipmentService {
             Integer minHorsepower,
             Integer maxHorsepower,
             BigDecimal maxDailyRate,
-            String driveType) {
+            String driveType,
+            String brand,
+            String district,
+            BigDecimal maxPurchasePrice) {
 
         Specification<Equipment> spec = (root, query, cb) -> {
             List<Predicate> predicates = new ArrayList<>();
@@ -76,13 +79,25 @@ public class EquipmentServiceImpl implements EquipmentService {
                 String pattern = "%" + search.toLowerCase().trim() + "%";
                 Predicate titleP = cb.like(cb.lower(root.get("title")), pattern);
                 Predicate makeP = cb.like(cb.lower(root.get("make")), pattern);
+                Predicate brandP = cb.like(cb.lower(root.get("brand")), pattern);
                 Predicate modelP = cb.like(cb.lower(root.get("model")), pattern);
                 Predicate cityP = cb.like(cb.lower(root.get("city")), pattern);
-                predicates.add(cb.or(titleP, makeP, modelP, cityP));
+                Predicate distP = cb.like(cb.lower(root.get("district")), pattern);
+                predicates.add(cb.or(titleP, makeP, brandP, modelP, cityP, distP));
             }
 
             if (category != null && !category.equalsIgnoreCase("all") && !category.trim().isEmpty()) {
                 predicates.add(cb.equal(root.get("category"), category));
+            }
+
+            if (brand != null && !brand.equalsIgnoreCase("all") && !brand.trim().isEmpty()) {
+                predicates.add(cb.equal(cb.lower(root.get("brand")), brand.toLowerCase().trim()));
+            }
+
+            if (district != null && !district.equalsIgnoreCase("all") && !district.trim().isEmpty()) {
+                Predicate distEq = cb.equal(cb.lower(root.get("district")), district.toLowerCase().trim());
+                Predicate cityEq = cb.equal(cb.lower(root.get("city")), district.toLowerCase().trim());
+                predicates.add(cb.or(distEq, cityEq));
             }
 
             if (isForRent != null && isForRent) {
@@ -103,6 +118,10 @@ public class EquipmentServiceImpl implements EquipmentService {
 
             if (maxDailyRate != null) {
                 predicates.add(cb.lessThanOrEqualTo(root.get("dailyRate"), maxDailyRate));
+            }
+
+            if (maxPurchasePrice != null) {
+                predicates.add(cb.lessThanOrEqualTo(root.get("purchasePrice"), maxPurchasePrice));
             }
 
             if (driveType != null && !driveType.equalsIgnoreCase("all") && !driveType.trim().isEmpty()) {

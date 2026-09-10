@@ -11,9 +11,11 @@ C:\Users\LOQ\OneDrive\ドキュメント\Desktop\AGRIRENT\backend\src\main\java\
 C:\Users\LOQ\OneDrive\ドキュメント\Desktop\AGRIRENT\backend\src\main\java\com\agrirent\app\dto\request\BookingCreateRequest.java
 C:\Users\LOQ\OneDrive\ドキュメント\Desktop\AGRIRENT\backend\src\main\java\com\agrirent\app\dto\request\BookingStatusUpdateRequest.java
 C:\Users\LOQ\OneDrive\ドキュメント\Desktop\AGRIRENT\backend\src\main\java\com\agrirent\app\dto\request\EquipmentCreateRequest.java
+C:\Users\LOQ\OneDrive\ドキュメント\Desktop\AGRIRENT\backend\src\main\java\com\agrirent\app\dto\request\ForgotPasswordRequest.java
 C:\Users\LOQ\OneDrive\ドキュメント\Desktop\AGRIRENT\backend\src\main\java\com\agrirent\app\dto\request\LoginRequest.java
 C:\Users\LOQ\OneDrive\ドキュメント\Desktop\AGRIRENT\backend\src\main\java\com\agrirent\app\dto\request\RegisterRequest.java
 C:\Users\LOQ\OneDrive\ドキュメント\Desktop\AGRIRENT\backend\src\main\java\com\agrirent\app\dto\request\ReviewCreateRequest.java
+C:\Users\LOQ\OneDrive\ドキュメント\Desktop\AGRIRENT\backend\src\main\java\com\agrirent\app\dto\request\UpdateProfileRequest.java
 C:\Users\LOQ\OneDrive\ドキュメント\Desktop\AGRIRENT\backend\src\main\java\com\agrirent\app\dto\response\AuthResponse.java
 C:\Users\LOQ\OneDrive\ドキュメント\Desktop\AGRIRENT\backend\src\main\java\com\agrirent\app\dto\response\BookingResponse.java
 C:\Users\LOQ\OneDrive\ドキュメント\Desktop\AGRIRENT\backend\src\main\java\com\agrirent\app\dto\response\DashboardMetricsResponse.java

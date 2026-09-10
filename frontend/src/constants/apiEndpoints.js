@@ -5,6 +5,8 @@ export const ENDPOINTS = {
     LOGIN: '/auth/login',
     REGISTER: '/auth/register',
     ME: '/auth/me',
+    PROFILE: '/auth/profile',
+    FORGOT_PASSWORD: '/auth/forgot-password',
   },
   EQUIPMENT: {
     BASE: '/equipment',

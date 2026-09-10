@@ -15,10 +15,13 @@ public class RegisterRequest {
     @Size(min = 6, message = "Password must be at least 6 characters")
     private String password;
 
-    @NotBlank(message = "Full name is required")
     private String fullName;
+    private String firstName;
+    private String lastName;
+    private String district;
+    private String pincode;
 
-    private String role; // ROLE_FARMER, ROLE_OWNER
+    private String role; // ROLE_FARMER, ROLE_OWNER, ROLE_DEALER
     private String farmName;
     private String phone;
     private String address;
@@ -37,8 +40,25 @@ public class RegisterRequest {
     public String getPassword() { return password; }
     public void setPassword(String password) { this.password = password; }
 
-    public String getFullName() { return fullName; }
+    public String getFullName() { 
+        if ((fullName == null || fullName.trim().isEmpty()) && firstName != null) {
+            return (firstName + (lastName != null ? " " + lastName : "")).trim();
+        }
+        return fullName; 
+    }
     public void setFullName(String fullName) { this.fullName = fullName; }
+
+    public String getFirstName() { return firstName; }
+    public void setFirstName(String firstName) { this.firstName = firstName; }
+
+    public String getLastName() { return lastName; }
+    public void setLastName(String lastName) { this.lastName = lastName; }
+
+    public String getDistrict() { return district; }
+    public void setDistrict(String district) { this.district = district; }
+
+    public String getPincode() { return pincode; }
+    public void setPincode(String pincode) { this.pincode = pincode; }
 
     public String getRole() { return role; }
     public void setRole(String role) { this.role = role; }

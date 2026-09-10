@@ -16,7 +16,10 @@ public interface EquipmentService {
             Integer minHorsepower,
             Integer maxHorsepower,
             BigDecimal maxDailyRate,
-            String driveType
+            String driveType,
+            String brand,
+            String district,
+            BigDecimal maxPurchasePrice
     );
 
     List<EquipmentResponse> getFeatured();

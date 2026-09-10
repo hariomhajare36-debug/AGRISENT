@@ -4,6 +4,7 @@ import { equipmentService } from '../../services/equipmentService';
 import { bookingService } from '../../services/bookingService';
 import StatusBadge from '../../components/common/StatusBadge';
 import { useAuth } from '../../hooks/useAuth';
+import { formatINR } from '../../utils/currency';
 
 export const OwnerDashboardPage = () => {
   const { user } = useAuth();
@@ -132,7 +133,7 @@ export const OwnerDashboardPage = () => {
             </span>
           </div>
           <div className="font-metric-val text-3xl font-bold text-primary">
-            ${(stats.monthlyGrossEarnings || 48250).toLocaleString()}
+            {formatINR(stats.monthlyGrossEarnings || 248000)}
           </div>
           <span className="text-xs text-secondary font-semibold mt-1 block">+18.4% vs last harvest</span>
         </div>
@@ -176,14 +177,14 @@ export const OwnerDashboardPage = () => {
               >
                 <div className="space-y-1">
                   <div className="flex items-center gap-2">
-                    <span className="font-bold text-sm text-on-surface">{b.equipmentTitle || 'John Deere 8R 410'}</span>
+                    <span className="font-bold text-sm text-on-surface">{b.equipmentTitle || 'Mahindra 575 DI Sarpanch'}</span>
                     <StatusBadge status="PENDING" />
                     <span className="text-xs font-semibold text-primary">
-                      ${Number(b.totalAmount || 0).toLocaleString()} (In Escrow)
+                      {formatINR(b.totalAmount || 0)} (In Escrow)
                     </span>
                   </div>
                   <p className="text-xs text-on-surface-variant">
-                    Renter: <strong className="text-on-surface">{b.renterName || 'David Miller'}</strong> ({b.renterEmail})
+                    Renter: <strong className="text-on-surface">{b.renterName || 'Ramesh Patil'}</strong> ({b.renterEmail})
                     • Period: {new Date(b.startDate).toLocaleDateString()} to {new Date(b.endDate).toLocaleDateString()} ({b.totalDays} Days)
                   </p>
                   <p className="text-xs text-on-surface-variant italic">
@@ -265,7 +266,7 @@ export const OwnerDashboardPage = () => {
                     </div>
                   </td>
                   <td className="py-3.5 pr-4 font-bold text-primary">
-                    ${Number(item.dailyRate).toLocaleString()} / day
+                    {formatINR(item.dailyRate)} / day
                   </td>
                   <td className="py-3.5 pr-4">
                     <Link

@@ -22,8 +22,14 @@ public class Equipment {
     @Column(nullable = false, length = 100)
     private String make;
 
+    @Column(length = 100)
+    private String brand;
+
     @Column(nullable = false, length = 100)
     private String model;
+
+    @Column(length = 100)
+    private String variant;
 
     @Column(nullable = false)
     private Integer year;
@@ -33,6 +39,39 @@ public class Equipment {
 
     @Column(name = "serial_vin", length = 100)
     private String serialVin;
+
+    @Column(length = 10, nullable = false)
+    private String currency = "INR";
+
+    @Column(name = "price_type", length = 50, nullable = false)
+    private String priceType = "FIXED";
+
+    @Column(name = "price_source_name", length = 255)
+    private String priceSourceName;
+
+    @Column(name = "price_source_url", length = 1000)
+    private String priceSourceUrl;
+
+    @Column(name = "last_verified_date", length = 50)
+    private String lastVerifiedDate;
+
+    @Column(length = 100)
+    private String district;
+
+    @Column(name = "lifting_capacity_kg")
+    private Integer liftingCapacityKg;
+
+    @Column(name = "fuel_tank_litres")
+    private Integer fuelTankLitres;
+
+    @Column(name = "engine_cc")
+    private Integer engineCc;
+
+    @Column(name = "pto_rpm", length = 50)
+    private String ptoRpm;
+
+    @Column(precision = 3, scale = 2, nullable = false)
+    private BigDecimal rating = new BigDecimal("4.8");
 
     private Integer horsepower;
 
@@ -245,4 +284,43 @@ public class Equipment {
 
     public LocalDateTime getUpdatedAt() { return updatedAt; }
     public void setUpdatedAt(LocalDateTime updatedAt) { this.updatedAt = updatedAt; }
+
+    public String getBrand() { return brand; }
+    public void setBrand(String brand) { this.brand = brand; }
+
+    public String getVariant() { return variant; }
+    public void setVariant(String variant) { this.variant = variant; }
+
+    public String getCurrency() { return currency; }
+    public void setCurrency(String currency) { this.currency = currency; }
+
+    public String getPriceType() { return priceType; }
+    public void setPriceType(String priceType) { this.priceType = priceType; }
+
+    public String getPriceSourceName() { return priceSourceName; }
+    public void setPriceSourceName(String priceSourceName) { this.priceSourceName = priceSourceName; }
+
+    public String getPriceSourceUrl() { return priceSourceUrl; }
+    public void setPriceSourceUrl(String priceSourceUrl) { this.priceSourceUrl = priceSourceUrl; }
+
+    public String getLastVerifiedDate() { return lastVerifiedDate; }
+    public void setLastVerifiedDate(String lastVerifiedDate) { this.lastVerifiedDate = lastVerifiedDate; }
+
+    public String getDistrict() { return district; }
+    public void setDistrict(String district) { this.district = district; }
+
+    public Integer getLiftingCapacityKg() { return liftingCapacityKg; }
+    public void setLiftingCapacityKg(Integer liftingCapacityKg) { this.liftingCapacityKg = liftingCapacityKg; }
+
+    public Integer getFuelTankLitres() { return fuelTankLitres; }
+    public void setFuelTankLitres(Integer fuelTankLitres) { this.fuelTankLitres = fuelTankLitres; }
+
+    public Integer getEngineCc() { return engineCc; }
+    public void setEngineCc(Integer engineCc) { this.engineCc = engineCc; }
+
+    public String getPtoRpm() { return ptoRpm; }
+    public void setPtoRpm(String ptoRpm) { this.ptoRpm = ptoRpm; }
+
+    public BigDecimal getRating() { return rating; }
+    public void setRating(BigDecimal rating) { this.rating = rating; }
 }
