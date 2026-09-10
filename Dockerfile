@@ -42,15 +42,20 @@ RUN mvn clean package -DskipTests
 FROM eclipse-temurin:17-jre-alpine
 WORKDIR /app
 
-# Run as non-root user
-RUN addgroup -S appgroup && adduser -S appuser -G appgroup
+# Create persistent data directory and non-root user
+RUN mkdir -p /app/data && \
+    addgroup -S appgroup && \
+    adduser -S appuser -G appgroup && \
+    chown -R appuser:appgroup /app
+
 USER appuser
 
 # Copy compiled JAR
 COPY --from=backend-builder --chown=appuser:appgroup /app/backend/target/agrirent-backend-*.jar app.jar
 
-# Dynamic port binding (Render assigns $PORT dynamically)
+# Environment Variables: Default to cloud 'docker' profile with dynamic $PORT
 ENV PORT=8080
+ENV SPRING_PROFILES_ACTIVE=docker
 EXPOSE 8080
 
-ENTRYPOINT ["sh", "-c", "exec java -Dserver.port=${PORT:-8080} -jar app.jar"]
+ENTRYPOINT ["sh", "-c", "exec java -Dserver.port=${PORT:-8080} -Dspring.profiles.active=${SPRING_PROFILES_ACTIVE:-docker} -jar app.jar"]
