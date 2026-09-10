@@ -1,0 +1,14 @@
+#!/bin/sh
+# ----------------------------------------------------------------------------
+# Maven Wrapper Shell Script
+# ----------------------------------------------------------------------------
+MAVEN_DIR="$HOME/.m2/wrapper/dists/apache-maven-3.9.9/bin"
+if [ ! -f "$MAVEN_DIR/mvn" ]; then
+  echo "Downloading Maven 3.9.9 distribution..."
+  mkdir -p "$HOME/.m2/wrapper/dists"
+  curl -fsSL https://repo.maven.apache.org/maven2/org/apache/maven/apache-maven/3.9.9/apache-maven-3.9.9-bin.zip -o /tmp/maven.zip
+  unzip -q /tmp/maven.zip -d "$HOME/.m2/wrapper/dists"
+  rm -f /tmp/maven.zip
+  chmod +x "$MAVEN_DIR/mvn"
+fi
+exec "$MAVEN_DIR/mvn" "$@"
